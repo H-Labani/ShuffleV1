@@ -3,11 +3,11 @@ from collections import Counter;
 import matplotlib.pyplot as plt
 import numpy as np
 
-n = 100
-r = 2
-l = int(math.sqrt(n))
-max_possible_outcomes = l ** r
-sorted_array = list(range(0, n));
+n = 100  # the total number of items to be shuffled
+r = 2  # the number of rounds
+l = int(math.sqrt(n)) # the batch length
+# max_possible_outcomes = l ** r
+sorted_array = list(range(0, n));  # a list of sequential integers from 0 to n. Used as a seed for formatting the data.
 
 
 # generate a data set consisting of sequential integer starting from 0 to n.
@@ -37,14 +37,14 @@ def apply_permutation(data, permutations):
     return permuted_data;
 
 
-# Find the possible positions of a target position after the permutation
-def get_outcomes(target, permutation):
-    outcomes = []
-    for i in range(l):
-        outcomes.append(permutation[math.floor(target / l) * l + i]);
-    return outcomes;
-
-    # Finding the start index of the target's batch: start index = floor(index / l) * l
+# # Find the possible positions of a target position after the permutation
+# def get_outcomes(target, permutation):
+#     outcomes = []
+#     for i in range(l):
+#         outcomes.append(permutation[math.floor(target / l) * l + i]);
+#     return outcomes;
+#
+#     # Finding the start index of the target's batch: start index = floor(index / l) * l
 
 
 if __name__ == '__main__':
